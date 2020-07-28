@@ -47,7 +47,7 @@ footer{
 }
 .home-template .logo-center img{
   margin: auto;
-  max-width: 454px;
+  max-width: 535px;
   margin-top: 54px;
 }
 @media (min-width: 1200px){
@@ -158,7 +158,12 @@ footer{
 }
 .skin__icon p{
   margin-top: 10px;
+  text-align: center;
   margin-bottom: 0px;
+}
+.skin__icon-mini{
+    text-align: center;
+    width: 100%;
 }
 .arrow-down{
   position: absolute;
@@ -168,7 +173,7 @@ footer{
   border-right: 10px solid transparent;
   border-top: 15px solid #e9adc4;
   left: 50%;
-  bottom: -14px;
+  bottom: -16px;
   transform: translateX(-50%);
 }
 
@@ -190,6 +195,10 @@ footer{
 }
 
 @media (min-width: 768px){
+
+  .skin__list img , .skin__icon--detail img{
+    height: 124px;
+  }
   .share-button img{
     max-width: 220px;
   }
@@ -281,7 +290,7 @@ footer{
   transition: 1s;
 }
 .col-md-3-fix a {
-  margin: 59px 0px;
+  margin: 40px 0px;
 }
 .col-md-3-fix{
   width: 20.8333334% !important;
@@ -328,6 +337,9 @@ l-body{
   width: 80%;
   margin: auto;
   flex-wrap: wrap;
+}
+.center-banner img{
+  margin: auto;
 }
 .skin__detail img{
   margin: auto;
@@ -502,15 +514,11 @@ l-body{
   width: 70%;
   flex-wrap: wrap;
 }
-.skin__icon-mini{
-  width: 35%;
-}
-.skin__icon-content{
-  width: 65%;
-}
+
 .skin__icon-tooltip{
   display: flex;
   flex-wrap: wrap;
+  text-align: center;
 }
 .skin__icon>div{
  padding: 10px;
@@ -519,6 +527,7 @@ l-body{
 }
 .skin__icon--detail img{
   margin: auto;
+
 }
 .skin__icon--detail{
   cursor: pointer;
@@ -531,6 +540,9 @@ l-body{
 }
 .skin__icon--more{
  padding: 15px;
+}
+.skin__icon--more p , .skin__icon-content{
+  text-align: center !important;
 }
 .skin__icon--info{
 
