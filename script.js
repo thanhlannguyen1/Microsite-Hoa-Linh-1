@@ -8,9 +8,9 @@
 				$('#'+id).find('.menu-items li:first-child h3 a').trigger('click');
 				const size = $('#'+id).find(".menu-items li").length;
 				if(size == 4){
-					$('.menu-items-mb li:nth-child(2)').hide();
+					$('.menu-items-mb li:nth-child(3)').hide();
 				}else{
-					$('.menu-items-mb li:nth-child(2)').show();
+					$('.menu-items-mb li:nth-child(3)').show();
 				}
 			 },300);
 		});
@@ -41,7 +41,7 @@
 
 			const add_video = "<iframe  src='https://www.youtube.com/embed/" + check_url + "?autoplay=1&showinfo=0' frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>";
 			$('#'+id).find(".skin__video").html(add_video);
-			$('#'+id).find(".skin__content p").html(check_content);
+			$('#'+id).find(".tab__skin3_wrapper  .skin__content p").html(check_content);
 		});
 		$('.menu-items li[data-id="3"] h3').click(function () {
 			const id = $('.modal.in').attr('id');
@@ -50,7 +50,7 @@
 			const check_content =  $('#'+id).find('.first-video').attr("data-content");
 			const add_video = "<iframe  src='https://www.youtube.com/embed/" + id_video_first + "?autoplay=0&showinfo=0' frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>";
 			$('#'+id).find(".skin__video").html(add_video);	
-			$('#'+id).find(".skin__content p").html(check_content);
+			$('#'+id).find(".tab__skin3_wrapper .skin__content p").html(check_content);
 		});
 		$('.menu-items li[data-id!="3"] h3 a').click(function () {
 			const id = $('.modal.in').attr('id');
@@ -63,7 +63,7 @@
 		  })
 		  .mouseleave(function() {
 		    var img = $('.center-banner').attr('data-image');
-		    $('.center-banner').html('<img class="img-responsive"  src="'+ img +'" ">');
+		    //$('.center-banner').html('<img class="img-responsive"  src="'+ img +'" ">');
 		  });
 	});
  	function openNav() {
