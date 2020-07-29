@@ -2,8 +2,17 @@
     $(document).ready(function() {
 		$(".list-person>div").click(function () {
 			$('.menu-items-mb').addClass('active');
-			$('.menu-items li:first-child h3 a').trigger('click');
-
+			
+			 setTimeout(function(){ 
+				const id = $('.modal.in').attr('id');			
+				$('#'+id).find('.menu-items li:first-child h3 a').trigger('click');
+				const size = $('#'+id).find(".menu-items li").length;
+				if(size == 4){
+					$('.menu-items-mb li:nth-child(2)').hide();
+				}else{
+					$('.menu-items-mb li:nth-child(2)').show();
+				}
+			 },300);
 		});
 		$(".close-button").click(function () {
 			$('.menu-items-mb').removeClass('active');
@@ -22,16 +31,26 @@
 		});
 		$(".skin__detail>div").click(function () {
 			const check_url = $(this).attr("data-url");
+			$('.first_skin').removeClass('hidden');
+			$('.click_skin').addClass('hidden');
+
+			$(this).find('.first_skin').addClass('hidden');
+			$(this).find('.click_skin').removeClass('hidden');
+			const check_content = $(this).attr("data-content");
 			const id = $('.modal.in').attr('id');
 
 			const add_video = "<iframe  src='https://www.youtube.com/embed/" + check_url + "?autoplay=1&showinfo=0' frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>";
 			$('#'+id).find(".skin__video").html(add_video);
+			$('#'+id).find(".skin__content p").html(check_content);
 		});
-		$('.menu-items li[data-id="3"] h3 a').click(function () {
+		$('.menu-items li[data-id="3"] h3').click(function () {
 			const id = $('.modal.in').attr('id');
+
 			const id_video_first = $('#'+id).find('.first-video').attr("data-url");
+			const check_content =  $('#'+id).find('.first-video').attr("data-content");
 			const add_video = "<iframe  src='https://www.youtube.com/embed/" + id_video_first + "?autoplay=0&showinfo=0' frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>";
 			$('#'+id).find(".skin__video").html(add_video);	
+			$('#'+id).find(".skin__content p").html(check_content);
 		});
 		$('.menu-items li[data-id!="3"] h3 a').click(function () {
 			const id = $('.modal.in').attr('id');
